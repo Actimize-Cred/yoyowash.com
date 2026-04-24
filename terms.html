@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms &amp; Conditions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #163A5B;
+      --secondary: #F59E0B;
+      --dark: #2D3748;
+      --shadow: 0 6px 32px 0 rgba(22, 58, 91, 0.15), 0 1.5px 8px 0 rgba(22, 58, 91, 0.05);
+      --gradient2: linear-gradient(180deg, #163A5B 0%, #0F2840 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-family, "Outfit", sans-serif);
+      background: #fff;
+      color: var(--dark);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+    .container {
+      width: 100%;
+      max-width: 1350px;
+      margin: auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    main { padding: 10px 5vw 40px; }
+
+    /* Tabs */
+    .tabs { border-bottom: 2px solid #E0F2FE; margin-bottom: 20px; }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #666;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: color 0.2s;
+      user-select: none;
+      margin-bottom: -2px;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom: 3px solid var(--primary);
+    }
+    .tab-btn:hover { color: var(--secondary); }
+
+    @media (max-width: 600px) {
+      .tabs { display: flex; margin-bottom: 10px; }
+      .tab-btn { font-size: 14px; padding: 10px 14px; }
+    }
+
+    /* Content */
+    .terms-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-bottom: 2px solid #E0F2FE;
+    }
+    .terms-title { font-size: 1.5rem; font-weight: 600; color: var(--text-dark); }
+    .last-updated { font-size: 0.8rem; color: #777; }
+
+    .table-of-contents h3 { font-size: 1.2rem; margin-bottom: 15px; color: #24292f; }
+    .table-of-contents ol { list-style-type: decimal; padding-left: 20px; margin: 0; }
+    .table-of-contents li { margin: 8px 0; }
+    .table-of-contents a { color: var(--primary); text-decoration: underline; font-weight: 600; }
+    .table-of-contents a:hover { color: var(--secondary); }
+
+    .section { margin: 20px 0; padding: 0 !important; }
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      border-bottom: 2px solid #E0F2FE;
+      padding-bottom: 10px;
+    }
+    .section p { line-height: 1.7; color: #444; margin: 15px 0; }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 34px;
+      right: 35px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      z-index: 1001;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s;
+      user-select: none;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px) scale(1.06);
+      box-shadow: 0 5px 22px 0 rgba(243, 94, 176, 0.18);
+    }
+  </style>
+</head>
+<body style="padding-top: 100px;">
+  <!-- Navigation -->
+  <nav class="navbar scrolled">
+      <div class="container nav-container">
+          <a href="yoyowash.html" class="logo">
+              <img src="assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px;">
+              <span class="logo-text" style="color: var(--primary-color);">YOYO <span style="font-weight: 500; color: var(--text-dark);">Wash</span></span>
+          </a>
+          
+          <ul class="nav-links">
+              <li><a href="yoyowash.html">Home</a></li>
+              <li><a href="yoyowash.html#services">Services</a></li>
+              <li><a href="yoyowash.html#how-it-works">How It Works</a></li>
+          </ul>
+
+          <div class="nav-actions">
+              <a href="#" class="btn btn-primary">
+                  <i class="fab fa-google-play" style="margin-right: 6px;"></i> Download App
+              </a>
+          </div>
+
+          <button class="mobile-menu-btn">
+              <i class="fas fa-bars"></i>
+          </button>
+      </div>
+  </nav>
+
+  <div class="container">
+  <main>
+    <!-- Tab Navigation: Terms is active, Privacy links to /privacy -->
+    <div class="tabs">
+      <a href="privacy.html" class="tab-btn">Privacy Policy</a>
+      <a href="terms.html" class="tab-btn active">Terms &amp; Conditions</a>
+    </div>
+
+    <div class="terms-header">
+      <span class="terms-title">Terms & Conditions</span>
+      <span class="last-updated">Last updated: 20/04/2026</span>
+    </div>
+
+    <div class="table-of-contents">
+      <h3>Table of Contents:</h3>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#acceptance">Acceptance of Terms</a></li>
+        <li><a href="#user-accounts">User Accounts</a></li>
+        <li><a href="#use-of-app">Use of the App</a></li>
+        <li><a href="#intellectual-property">Intellectual Property</a></li>
+        <li><a href="#termination">Termination</a></li>
+        <li><a href="#limitation-liability">Limitation of Liability</a></li>
+        <li><a href="#third-party-links">Third-Party Links</a></li>
+        <li><a href="#changes-to-terms">Changes to Terms</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <div class="section" id="introduction">
+      <h2>1. Introduction</h2>
+      <p>Welcome to YoyoWash! These Terms and Conditions (“Terms”) govern your use of our mobile application (“App”). By accessing or using the App, you agree to be bound by these Terms.</p>
+    </div>
+
+    <div class="section" id="acceptance">
+      <h2>2. Acceptance of Terms</h2>
+      <p>By downloading, installing, or using the App, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree, please uninstall and discontinue use.</p>
+    </div>
+
+    <div class="section" id="user-accounts">
+      <h2>3. User Accounts</h2>
+      <p>To access certain features, you may be required to create an account. You are responsible for maintaining the confidentiality of your account and password and for all activities that occur under your account.</p>
+    </div>
+
+    <div class="section" id="use-of-app">
+      <h2>4. Use of the App</h2>
+      <p>You agree to use the App only for lawful purposes and in accordance with these Terms. You may not use the App to engage in any harmful, illegal, or unauthorized activity.</p>
+    </div>
+
+    <div class="section" id="intellectual-property">
+      <h2>5. Intellectual Property</h2>
+      <p>All content, trademarks, and intellectual property within the App are owned by YoyoWash or its licensors. You may not copy, reproduce, or distribute any part of the App without our permission.</p>
+    </div>
+
+    <div class="section" id="termination">
+      <h2>6. Termination</h2>
+      <p>We may suspend or terminate your access to the App at any time, without prior notice or liability, for any reason whatsoever, including if you breach the Terms.</p>
+    </div>
+
+    <div class="section" id="limitation-liability">
+      <h2>7. Limitation of Liability</h2>
+      <p>YoyoWash is provided “as is” and without warranties of any kind. We do not guarantee that the App will be error-free or uninterrupted. In no event shall we be liable for any damages arising from your use of the App.</p>
+    </div>
+
+    <div class="section" id="third-party-links">
+      <h2>8. Third-Party Links</h2>
+      <p>The App may contain links to third-party websites or services that are not owned or controlled by YoyoWash. We are not responsible for the content, privacy policies, or practices of any third-party sites.</p>
+    </div>
+
+    <div class="section" id="changes-to-terms">
+      <h2>9. Changes to Terms</h2>
+      <p>We reserve the right to update or modify these Terms at any time. Continued use of the App after changes are posted constitutes your acceptance of the revised Terms.</p>
+    </div>
+
+    <div class="section" id="contact-us">
+      <h2>10. Contact Us</h2>
+      <p>If you have any questions or concerns about these Terms, please contact us at <a href="mailto:contact@actimize.in">contact@actimize.in</a></p>
+    </div>
+  </main>
+  </div>
+
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-grid">
+              <div class="footer-brand">
+                  <a href="yoyowash.html" class="logo">
+                      <img src="assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px; filter: brightness(0) invert(1);">
+                      <span class="logo-text" style="color: white;">YOYO <span style="font-weight: 500; color: #E0F2FE;">Wash</span></span>
+                  </a>
+                  <p>Transforming the way you do laundry with premium care, ultimate convenience, and exceptional service.</p>
+                  <div class="social-links">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+
+              <div class="footer-links-group">
+                  <h4>Company</h4>
+                  <ul class="footer-links">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Careers</a></li>
+                      <li><a href="#">Press</a></li>
+                      <li><a href="#">Blog</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-links-group">
+                  <h4>Services</h4>
+                  <ul class="footer-links">
+                      <li><a href="yoyowash.html#services">Wash & Fold</a></li>
+                      <li><a href="yoyowash.html#services">Dry Cleaning</a></li>
+                      <li><a href="yoyowash.html#services">Ironing</a></li>
+                      <li><a href="#">Commercial Laundry</a></li>
+                  </ul>
+              </div>
+
+              <div class="footer-links-group">
+                  <h4>Help & Support</h4>
+                  <ul class="footer-links">
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">Contact Us</a></li>
+                      <li><a href="terms.html">Terms & Conditions</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="footer-bottom">
+              <p>&copy; 2026 YoyoWash. All rights reserved.</p>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for TOC anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          const y = targetEl.getBoundingClientRect().top + window.pageYOffset - 20;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
