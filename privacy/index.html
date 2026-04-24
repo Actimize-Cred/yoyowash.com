@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -122,15 +122,15 @@
   <!-- Navigation -->
   <nav class="navbar scrolled">
       <div class="container nav-container">
-          <a href="yoyowash.html" class="logo">
-              <img src="assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px;">
+          <a href="/" class="logo">
+              <img src="../assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px;">
               <span class="logo-text" style="color: var(--primary-color);">YOYO <span style="font-weight: 500; color: var(--text-dark);">Wash</span></span>
           </a>
-          
+
           <ul class="nav-links">
-              <li><a href="yoyowash.html">Home</a></li>
-              <li><a href="yoyowash.html#services">Services</a></li>
-              <li><a href="yoyowash.html#how-it-works">How It Works</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/#services">Services</a></li>
+              <li><a href="/#how-it-works">How It Works</a></li>
           </ul>
 
           <div class="nav-actions">
@@ -147,10 +147,9 @@
 
   <div class="container">
   <main>
-    <!-- Tab Navigation: Privacy is active, Terms links to /terms -->
     <div class="tabs">
-      <a href="privacy.html" class="tab-btn active">Privacy Policy</a>
-      <a href="terms.html" class="tab-btn">Terms &amp; Conditions</a>
+      <a href="/privacy" class="tab-btn active">Privacy Policy</a>
+      <a href="/terms" class="tab-btn">Terms &amp; Conditions</a>
     </div>
 
     <div class="terms-header">
@@ -166,7 +165,7 @@
         <li><a href="#user">Sharing of Information</a></li>
         <li><a href="#use">Data Security</a></li>
         <li><a href="#intellectual">User Control</a></li>
-        <li><a href="#termination">Children’s Privacy</a></li>
+        <li><a href="#termination">Children's Privacy</a></li>
         <li><a href="#limitation">Updates to Privacy Policy</a></li>
         <li><a href="#third-party">Contact</a></li>
       </ol>
@@ -216,7 +215,7 @@
     </div>
 
     <div class="section" id="termination">
-      <h2>6. Children’s Privacy</h2>
+      <h2>6. Children's Privacy</h2>
       <ul>
         <li>YoyoWash is not intended for children under 13.</li>
         <li>If we learn that we have collected data from a minor, we will delete it immediately.</li>
@@ -245,8 +244,8 @@
       <div class="container">
           <div class="footer-grid">
               <div class="footer-brand">
-                  <a href="yoyowash.html" class="logo">
-                      <img src="assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px; filter: brightness(0) invert(1);">
+                  <a href="/" class="logo">
+                      <img src="../assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px; filter: brightness(0) invert(1);">
                       <span class="logo-text" style="color: white;">YOYO <span style="font-weight: 500; color: #E0F2FE;">Wash</span></span>
                   </a>
                   <p>Transforming the way you do laundry with premium care, ultimate convenience, and exceptional service.</p>
@@ -261,8 +260,6 @@
               <div class="footer-links-group">
                   <h4>Company</h4>
                   <ul class="footer-links">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Careers</a></li>
                       <li><a href="#">Press</a></li>
                       <li><a href="#">Blog</a></li>
                   </ul>
@@ -271,24 +268,24 @@
               <div class="footer-links-group">
                   <h4>Services</h4>
                   <ul class="footer-links">
-                      <li><a href="yoyowash.html#services">Wash & Fold</a></li>
-                      <li><a href="yoyowash.html#services">Dry Cleaning</a></li>
-                      <li><a href="yoyowash.html#services">Ironing</a></li>
+                      <li><a href="#">Wash &amp; Fold</a></li>
+                      <li><a href="#">Dry Cleaning</a></li>
+                      <li><a href="#">Ironing</a></li>
                       <li><a href="#">Commercial Laundry</a></li>
                   </ul>
               </div>
 
               <div class="footer-links-group">
-                  <h4>Help & Support</h4>
+                  <h4>Help &amp; Support</h4>
                   <ul class="footer-links">
                       <li><a href="#">FAQ</a></li>
                       <li><a href="#">Contact Us</a></li>
-                      <li><a href="terms.html">Terms & Conditions</a></li>
-                      <li><a href="privacy.html">Privacy Policy</a></li>
+                      <li><a href="/terms">Terms &amp; Conditions</a></li>
+                      <li><a href="/privacy">Privacy Policy</a></li>
                   </ul>
               </div>
           </div>
-          
+
           <div class="footer-bottom">
               <p>&copy; 2026 YoyoWash. All rights reserved.</p>
           </div>
@@ -296,7 +293,7 @@
   </footer>
 
   <script>
-    // Smooth scroll for TOC anchor links
+    history.replaceState(null, '', '/privacy');
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);

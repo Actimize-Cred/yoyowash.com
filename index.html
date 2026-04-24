@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/yoyowash_logo.png">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,7 +19,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px;">
                 <span class="logo-text" style="color: var(--primary-color);">YOYO <span style="font-weight: 500; color: var(--text-dark);">Wash</span></span>
             </a>
@@ -229,7 +230,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
+                    <a href="/" class="logo">
                         <img src="assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px; filter: brightness(0) invert(1);">
                         <span class="logo-text" style="color: white;">YOYO <span style="font-weight: 500; color: #E0F2FE;">Wash</span></span>
                     </a>
@@ -245,8 +246,7 @@
                 <div class="footer-links-group">
                     <h4>Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
+                        
                         <li><a href="#">Press</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
@@ -267,8 +267,8 @@
                     <ul class="footer-links">
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms & Conditions</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -290,5 +290,41 @@
             }
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* Smooth scroll for anchor links */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const y = targetEl.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* Mobile menu */
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  const backdrop = document.getElementById("menuBackdrop");
+
+  if (hamburgerBtn && mobileNav && backdrop) {
+    hamburgerBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
+      backdrop.classList.toggle("show");
+      hamburgerBtn.classList.toggle("active");
+    });
+    backdrop.addEventListener("click", () => {
+      mobileNav.classList.remove("show");
+      backdrop.classList.remove("show");
+      hamburgerBtn.classList.remove("active");
+    });
+  }
+
+});
+</script>
 </body>
 </html>
