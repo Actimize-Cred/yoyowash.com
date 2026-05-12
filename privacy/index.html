@@ -139,11 +139,23 @@
               </a>
           </div>
 
-          <button class="mobile-menu-btn">
+          <button class="mobile-menu-btn" id="hamburgerBtn">
               <i class="fas fa-bars"></i>
           </button>
       </div>
   </nav>
+
+  <div id="menuBackdrop"></div>
+  <div id="mobileNav">
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#how-it-works">How It Works</a></li>
+      </ul>
+      <a href="#" class="btn btn-primary">
+          <i class="fab fa-google-play" style="margin-right: 6px;"></i> Download App
+      </a>
+  </div>
 
   <div class="container">
   <main>
@@ -294,6 +306,7 @@
 
   <script>
     history.replaceState(null, '', '/privacy');
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href').substring(1);
@@ -305,6 +318,30 @@
         }
       });
     });
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const backdrop = document.getElementById('menuBackdrop');
+    if (hamburgerBtn && mobileNav && backdrop) {
+      const icon = hamburgerBtn.querySelector('i');
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('show');
+        backdrop.classList.toggle('show');
+        icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+      });
+      backdrop.addEventListener('click', () => {
+        mobileNav.classList.remove('show');
+        backdrop.classList.remove('show');
+        icon.className = 'fas fa-bars';
+      });
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('show');
+          backdrop.classList.remove('show');
+          icon.className = 'fas fa-bars';
+        });
+      });
+    }
   </script>
 </body>
 </html>

@@ -37,11 +37,26 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="hamburgerBtn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Nav Backdrop -->
+    <div id="menuBackdrop"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobileNav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary">
+            <i class="fab fa-google-play" style="margin-right: 6px;"></i> Download App
+        </a>
+    </div>
 
     <!-- Hero Section -->
     <header id="home" class="hero">
@@ -312,15 +327,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const backdrop = document.getElementById("menuBackdrop");
 
   if (hamburgerBtn && mobileNav && backdrop) {
+    const icon = hamburgerBtn.querySelector('i');
     hamburgerBtn.addEventListener("click", () => {
-      mobileNav.classList.toggle("show");
+      const isOpen = mobileNav.classList.toggle("show");
       backdrop.classList.toggle("show");
-      hamburgerBtn.classList.toggle("active");
+      icon.className = isOpen ? "fas fa-times" : "fas fa-bars";
     });
     backdrop.addEventListener("click", () => {
       mobileNav.classList.remove("show");
       backdrop.classList.remove("show");
-      hamburgerBtn.classList.remove("active");
+      icon.className = "fas fa-bars";
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove("show");
+        backdrop.classList.remove("show");
+        icon.className = "fas fa-bars";
+      });
     });
   }
 

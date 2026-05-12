@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YoyoWash | Delete Account</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #163A5B;
+      --secondary: #F59E0B;
+      --dark: #2D3748;
+      --shadow: 0 6px 32px 0 rgba(22, 58, 91, 0.15), 0 1.5px 8px 0 rgba(22, 58, 91, 0.05);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-family, "Outfit", sans-serif);
+      background: #fff;
+      color: var(--dark);
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+    .container {
+      width: 100%;
+      max-width: 1350px;
+      margin: auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    main { padding: 10px 5vw 60px; }
+
+    .page-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-bottom: 2px solid #E0F2FE;
+      padding-bottom: 12px;
+      margin-bottom: 28px;
+    }
+    .page-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .page-subtitle {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 4px;
+    }
+
+    .info-box {
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .info-box i {
+      color: #D97706;
+      font-size: 1.1rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .info-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #92400E;
+      line-height: 1.6;
+    }
+
+    .data-list {
+      background: #F7FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .data-list h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 0 0 12px;
+    }
+    .data-list ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+    .data-list ul li {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .delete-form {
+      max-width: 560px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .form-group label .required {
+      color: #E53E3E;
+      margin-left: 2px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #CBD5E0;
+      border-radius: 8px;
+      font-family: var(--font-family, "Outfit", sans-serif);
+      font-size: 1rem;
+      color: var(--dark);
+      background: #fff;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(22, 58, 91, 0.08);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #E53E3E;
+      color: white;
+      border: none;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: var(--font-family, "Outfit", sans-serif);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .submit-btn:hover {
+      background: #C53030;
+      transform: translateY(-1px);
+    }
+
+    .success-message {
+      display: none;
+      background: #F0FFF4;
+      border: 1px solid #9AE6B4;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 24px;
+      color: #276749;
+      font-size: 0.95rem;
+    }
+    .success-message i {
+      margin-right: 8px;
+      color: #38A169;
+    }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 34px;
+      right: 35px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      z-index: 1001;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s;
+      user-select: none;
+    }
+    .back-to-top:hover { transform: translateY(-3px) scale(1.06); }
+
+    @media (max-width: 600px) {
+      .delete-form { max-width: 100%; }
+      .data-list { padding: 16px; }
+    }
+  </style>
+</head>
+<body style="padding-top: 100px;">
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled">
+    <div class="container nav-container">
+      <a href="/" class="logo">
+        <img src="../assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px;">
+        <span class="logo-text" style="color: var(--primary-color);">YOYO <span style="font-weight: 500; color: var(--text-dark);">Wash</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#how-it-works">How It Works</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary">
+          <i class="fab fa-google-play" style="margin-right: 6px;"></i> Download App
+        </a>
+      </div>
+
+      <button class="mobile-menu-btn" id="hamburgerBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div id="menuBackdrop"></div>
+  <div id="mobileNav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+    </ul>
+    <a href="#" class="btn btn-primary">
+      <i class="fab fa-google-play" style="margin-right: 6px;"></i> Download App
+    </a>
+  </div>
+
+  <div class="container">
+    <main>
+      <div class="page-header">
+        <span class="page-title">Delete Account</span>
+        <span class="page-subtitle">Submit a request to permanently delete your YoyoWash account and data.</span>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-triangle-exclamation"></i>
+        <p>
+          Account deletion is <strong>permanent and cannot be undone.</strong> Once processed, all your data will be removed from our systems. Please allow up to <strong>7 business days</strong> for your request to be completed.
+        </p>
+      </div>
+
+      <div class="data-list">
+        <h3>What gets deleted:</h3>
+        <ul>
+          <li>Your account profile (name, email, phone number)</li>
+          <li>Order history and service records</li>
+          <li>Saved addresses and delivery preferences</li>
+          <li>Any active subscriptions or credits (non-refundable)</li>
+        </ul>
+      </div>
+
+      <form class="delete-form" id="deleteForm">
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Registered Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="Enter the email linked to your account" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for Deletion (optional)</label>
+          <select id="reason" name="reason">
+            <option value="" disabled selected>Select a reason</option>
+            <option value="No longer using the service">No longer using the service</option>
+            <option value="Privacy concerns">Privacy concerns</option>
+            <option value="Switching to another service">Switching to another service</option>
+            <option value="Too many notifications">Too many notifications</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Additional Comments (optional)</label>
+          <textarea id="message" name="message" placeholder="Anything else you'd like to share..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-trash-can"></i> Submit Deletion Request
+        </button>
+      </form>
+
+      <div class="success-message" id="successMsg">
+        <i class="fas fa-circle-check"></i>
+        <strong>Request sent!</strong> Your deletion request has been submitted. We'll process it within 7 business days and send a confirmation to your email.
+      </div>
+    </main>
+  </div>
+
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="../assets/yoyowash_logo.png" alt="YOYO Wash Logo" style="height: 40px; width: auto; margin-right: 8px; filter: brightness(0) invert(1);">
+            <span class="logo-text" style="color: white;">YOYO <span style="font-weight: 500; color: #E0F2FE;">Wash</span></span>
+          </a>
+          <p>Transforming the way you do laundry with premium care, ultimate convenience, and exceptional service.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Wash &amp; Fold</a></li>
+            <li><a href="#">Dry Cleaning</a></li>
+            <li><a href="#">Ironing</a></li>
+            <li><a href="#">Commercial Laundry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Help &amp; Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="/terms">Terms &amp; Conditions</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 YoyoWash. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('deleteForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name    = document.getElementById('fullName').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      const reason  = document.getElementById('reason').value;
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('Account Deletion Request - YoyoWash');
+      const body = encodeURIComponent(
+        `Account Deletion Request\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        (phone   ? `Phone: ${phone}\n`   : '') +
+        (reason  ? `Reason: ${reason}\n` : '') +
+        (message ? `\nComments:\n${message}\n` : '') +
+        `\n---\nSubmitted via yoyowash.com/delete`
+      );
+
+      window.location.href = `mailto:contact@actimize.in?subject=${subject}&body=${body}`;
+
+      document.getElementById('deleteForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    });
+
+    /* Mobile menu */
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav    = document.getElementById('mobileNav');
+    const backdrop     = document.getElementById('menuBackdrop');
+    if (hamburgerBtn && mobileNav && backdrop) {
+      const icon = hamburgerBtn.querySelector('i');
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('show');
+        backdrop.classList.toggle('show');
+        icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+      });
+      backdrop.addEventListener('click', () => {
+        mobileNav.classList.remove('show');
+        backdrop.classList.remove('show');
+        icon.className = 'fas fa-bars';
+      });
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('show');
+          backdrop.classList.remove('show');
+          icon.className = 'fas fa-bars';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
